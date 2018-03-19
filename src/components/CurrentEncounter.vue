@@ -1,9 +1,9 @@
 <template>
   <div class='container'>
     <h1>Current Encounter</h1>
-    <p>Total Exp: {{ currentEncounterExp }}</p>
+    <p>Total Exp: {{ totalExp }}</p>
     <ul>
-      <li :key="monster.id" v-for="(monster, index) in currentEncounter">
+      <li :key="monster.id" v-for="(monster, index) in monsters">
         {{ monster.name }}
         {{ monster.exp }}
         <button @click="remove(index)">[x]</button>
@@ -18,8 +18,8 @@ import store from '../store'
 export default {
   name: 'CurrentEncounter',
   computed: {
-    currentEncounter: () => store.state.currentEncounter,
-    currentEncounterExp: () => store.state.currentEncounterExp
+    monsters: () => store.state.currentEncounter.monsters,
+    totalExp: () => store.state.currentEncounter.totalExp
   },
   methods: {
     remove(monster) {
