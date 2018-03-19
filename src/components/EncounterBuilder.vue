@@ -32,11 +32,13 @@ export default {
   flex: 1;
 }
 
-#encounter-builder .container h1 {
+h1 {
   text-align: center
 }
 
-#encounter-builder .container ul {
+ul {
   list-style: none;
+  padding: 0px;
+  margin: 0px;
 }
 </style>

@@ -1,24 +1,25 @@
 <template>
   <div class='container'>
     <h1>Select Monsters</h1>
-    <ul id="example-1">
-    <li :key="monster.id" v-for="monster in monsters">
-      {{ monster.name }}
-      {{ monster.exp }}
-    </li>
+    <ul>
+      <li :key="monster.id" v-for="monster in monsters">
+        {{ monster.name }}
+        {{ monster.exp }}
+        <button @click="add(monster)">add</button>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
+import store from '../store'
+
 export default {
   name: 'MonsterList',
-  data () {
-    return {
-      monsters: [
-        { id: 1, name: 'Fred', exp: 100 },
-        { id: 2, name: 'Flurb', exp: 50 }
-      ]
+  computed: { monsters: () => store.state.monsters },
+  methods: {
+    add(monster) {
+      store.commit('addMonster', monster)
     }
   }
 }

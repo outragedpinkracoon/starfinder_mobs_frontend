@@ -5,11 +5,22 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    numbers: []
+    monsters: [
+      { id: 1, name: 'Fred', exp: 150 },
+      { id: 2, name: 'Flurb', exp: 50 }
+    ],
+    currentEncounter: [],
+    currentEncounterExp: 0
   },
   mutations: {
-    add(state, number) {
-      state.numbers.push(number)
+    addMonster(state, monster) {
+      state.currentEncounter.push(monster)
+      state.currentEncounterExp += monster.exp
+    },
+    removeMonster(state, index) {
+      const monster = state.currentEncounter[index]
+      state.currentEncounter.splice(index, 1)
+      state.currentEncounterExp -= monster.exp
     }
   }
 })
