@@ -30,9 +30,25 @@ const monsterCollection = {
   }
 }
 
+const party = {
+  state: {
+    totalPlayers: 1,
+    playerLevel: 1
+  },
+  mutations: {
+    updatePlayers(state, total) {
+      state.totalPlayers = total
+    },
+    updateLevels(state, level) {
+      state.playerLevel = level
+    }
+  }
+}
+
 export default new Vuex.Store({
   modules: {
     currentEncounter: currentEncounter,
-    monsterCollection: monsterCollection
+    monsterCollection: monsterCollection,
+    party: party
   }
 })

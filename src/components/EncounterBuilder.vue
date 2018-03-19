@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Encounter Builder</h1>
+    <Party></Party>
     <div id='encounter-builder'>
       <MonsterList></MonsterList>
       <CurrentEncounter></CurrentEncounter>
@@ -11,10 +12,12 @@
 <script>
 import MonsterList from '@/components/MonsterList'
 import CurrentEncounter from '@/components/CurrentEncounter'
+import Party from '@/components/Party'
 
 export default {
   name: 'EncounterBuilder',
   components: {
+    Party,
     MonsterList,
     CurrentEncounter
   }
