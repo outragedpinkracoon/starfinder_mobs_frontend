@@ -16,7 +16,7 @@ import store from '../store'
 
 export default {
   name: 'MonsterList',
-  computed: { monsters: () => store.state.monsters },
+  computed: { monsters: () => store.state.monsterCollection.monsters },
   methods: {
     add(monster) {
       store.commit('addMonster', monster)

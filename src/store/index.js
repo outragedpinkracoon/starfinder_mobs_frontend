@@ -21,14 +21,18 @@ const currentEncounter = {
   }
 }
 
-export default new Vuex.Store({
-  modules: {
-    currentEncounter: currentEncounter
-  },
+const monsterCollection = {
   state: {
     monsters: [
       { id: 1, name: 'Fred', exp: 150 },
       { id: 2, name: 'Flurb', exp: 50 }
     ]
+  }
+}
+
+export default new Vuex.Store({
+  modules: {
+    currentEncounter: currentEncounter,
+    monsterCollection: monsterCollection
   }
 })
