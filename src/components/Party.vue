@@ -1,11 +1,16 @@
 <template>
   <div>
     <div>
-      <input v-model="numberOfPlayers"/>
-      <input v-model="level"/>
+      <p>Number of players
+        <input v-model="numberOfPlayers"/>
+        ({{ numberOfPlayers }})
+      </p>
+      <p>
+        Party Level
+        <input v-model="level"/>
+        ({{ level }})
+      </p>
     </div>
-    <p>{{ numberOfPlayers }}</p>
-    <p>{{ level }}</p>
   </div>
 </template>
 

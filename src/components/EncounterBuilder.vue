@@ -3,8 +3,8 @@
     <h1>Encounter Builder</h1>
     <Party></Party>
     <div id='encounter-builder'>
-      <MonsterList></MonsterList>
       <CurrentEncounter></CurrentEncounter>
+      <MonsterList></MonsterList>
     </div>
   </div>
 </template>
