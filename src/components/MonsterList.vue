@@ -1,5 +1,5 @@
 <template>
-  <div class='container'>
+  <div class='bordered'>
     <h1>Select Monsters</h1>
     <ul>
       <li :key="monster.id" v-for="monster in monsters">

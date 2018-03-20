@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='bordered'>
     <h1>Encounter Builder</h1>
     <Party></Party>
     <div id='encounter-builder'>
@@ -25,14 +25,8 @@ export default {
 </script>
 
 <style>
-#encounter-builder {
+.bordered {
   border: 1px solid red;
-  display: flex;
-  flex-flow: row;
-}
-
-#encounter-builder .container {
-  flex: 1;
 }
 
 h1 {

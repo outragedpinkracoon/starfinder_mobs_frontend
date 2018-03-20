@@ -1,5 +1,5 @@
 <template>
-  <div class='container'>
+  <div class='bordered'>
     <h1>Current Encounter</h1>
     <p>Total Exp: {{ totalExp }}</p>
     <ul>
