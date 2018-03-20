@@ -33,14 +33,14 @@ const monsterCollection = {
 const party = {
   state: {
     numberOfPlayers: 1,
-    playerLevel: 1
+    level: 1
   },
   mutations: {
     updatePlayers(state, total) {
       state.numberOfPlayers = total
     },
-    updateLevels(state, level) {
-      state.playerLevel = level
+    updateLevel(state, level) {
+      state.level = level
     }
   }
 }

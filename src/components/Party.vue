@@ -1,7 +1,11 @@
 <template>
   <div>
-    <input v-model="numberOfPlayers"/>
+    <div>
+      <input v-model="numberOfPlayers"/>
+      <input v-model="level"/>
+    </div>
     <p>{{ numberOfPlayers }}</p>
+    <p>{{ level }}</p>
   </div>
 </template>
 
@@ -17,6 +21,14 @@ export default {
       },
       set (value) {
         store.commit('updatePlayers', value)
+      }
+    },
+    level: {
+      get () {
+        return store.state.party.level
+      },
+      set (value) {
+        store.commit('updateLevel', value)
       }
     }
   }
