@@ -20,6 +20,7 @@ export default {
   methods: {
     add(monster) {
       store.commit('addMonster', monster)
+      store.dispatch('recalculateDifficulty')
     }
   }
 }

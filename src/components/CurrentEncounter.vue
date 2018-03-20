@@ -26,6 +26,7 @@ export default {
   methods: {
     remove(monster) {
       store.commit('removeMonster', monster)
+      store.dispatch('recalculateDifficulty')
     }
   }
 }

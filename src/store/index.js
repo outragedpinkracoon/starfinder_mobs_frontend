@@ -7,26 +7,35 @@ const currentEncounter = {
   state: {
     monsters: [],
     totalExp: 0,
-    difficulty: { id: 0, name: 'easy' }
+    difficulty: { id: 0, name: 'EASY' }
   },
   mutations: {
     addMonster(state, monster) {
       state.monsters.push(monster)
       state.totalExp += monster.exp
-      state.difficulty = calculateDifficulty(1)
     },
-    removeMonster(state, index, rootState) {
+    removeMonster(state, index) {
       const monster = state.monsters[index]
       state.monsters.splice(index, 1)
       state.totalExp -= monster.exp
-      state.difficulty = calculateDifficulty(2)
+    },
+    setDifficulty(state, { numberOfPlayers, partyLevel }) {
+      state.difficulty = calculateDifficulty(partyLevel)
+    }
+  },
+  actions: {
+    recalculateDifficulty: ({ commit, rootState }) => {
+      commit('setDifficulty', {
+        numberOfPlayers: rootState.party.numberOfPlayers,
+        partyLevel: rootState.party.level
+      })
     }
   }
 }
 
 const calculateDifficulty = (partyLevel) => {
   let result = { id: -1, name: 'EASY' }
-  switch (partyLevel) {
+  switch (parseInt(partyLevel)) {
     case -1:
       result = { id: -1, name: 'EASY' }
       break
@@ -45,6 +54,7 @@ const calculateDifficulty = (partyLevel) => {
     default:
       result = { id: -1, name: 'EASY' }
   }
+  console.log(partyLevel)
   return result
 }
 

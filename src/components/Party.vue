@@ -26,6 +26,7 @@ export default {
       },
       set (value) {
         store.commit('updatePlayers', value)
+        store.dispatch('recalculateDifficulty')
       }
     },
     level: {
@@ -34,6 +35,7 @@ export default {
       },
       set (value) {
         store.commit('updateLevel', value)
+        store.dispatch('recalculateDifficulty')
       }
     }
   }
