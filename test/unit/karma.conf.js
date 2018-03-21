@@ -18,6 +18,7 @@ module.exports = function karmaConfig (config) {
     preprocessors: {
       './index.js': ['webpack', 'sourcemap']
     },
+    failOnEmptyTestSuite: false,
     webpack: webpackConfig,
     webpackMiddleware: {
       noInfo: true
