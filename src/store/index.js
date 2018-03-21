@@ -19,16 +19,13 @@ const currentEncounter = {
       state.monsters.splice(index, 1)
       state.totalExp -= monster.exp
     },
-    setDifficulty(state, { numberOfPlayers, partyLevel }) {
+    setDifficulty(state, partyLevel) {
       state.difficulty = calculateDifficulty(partyLevel)
     }
   },
   actions: {
     recalculateDifficulty: ({ commit, rootState }) => {
-      commit('setDifficulty', {
-        numberOfPlayers: rootState.party.numberOfPlayers,
-        partyLevel: rootState.party.level
-      })
+      commit('setDifficulty', rootState.party.level)
     }
   }
 }
@@ -69,13 +66,9 @@ const monsterCollection = {
 
 const party = {
   state: {
-    numberOfPlayers: 1,
     level: 1
   },
   mutations: {
-    updatePlayers(state, total) {
-      state.numberOfPlayers = total
-    },
     updateLevel(state, level) {
       state.level = level
     }
