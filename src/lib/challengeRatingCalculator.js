@@ -1,5 +1,5 @@
 const calculate = (encounterExp) => {
-  if (encounterExp < 400) return 1
+  if (encounterExp < 400) return -1
 
   for (let index = 0; index < thresholds.length; index++) {
     const difference = thresholds[index] - encounterExp

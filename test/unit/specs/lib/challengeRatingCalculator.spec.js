@@ -39,7 +39,7 @@ describe('Challenge Rating Calculator', () => {
   context('when the exp is below the minimum threshold', () => {
     it('should have a CR of 1', () => {
       const result = calculate(200)
-      expect(result).to.equal(1)
+      expect(result).to.equal(-1)
     })
   })
 })

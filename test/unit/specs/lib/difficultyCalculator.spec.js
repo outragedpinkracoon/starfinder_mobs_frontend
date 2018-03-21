@@ -1,14 +1,17 @@
 import calculate from '@/lib/difficultyCalculator'
 
-xdescribe('Difficulty Calculator', () => {
-  context('with 4 level 3 players, encounter exp 600', () => {
+describe('Difficulty Calculator', () => {
+  context('with level 3 players, encounter exp 600', () => {
     it('should be easy', () => {
-      const result = calculate()
+      const result = calculate({
+        partyLevel: 3,
+        encounterExp: 600
+      })
       expect(result).to.equal('EASY')
     })
   })
 
-  context('with 4 level 3 players, encounter exp 800', () => {
+  context('with level 3 players, encounter exp 800', () => {
     it('should be average', () => {
       const result = calculate({
         partyLevel: 3,
@@ -18,7 +21,7 @@ xdescribe('Difficulty Calculator', () => {
     })
   })
 
-  context('with 4 level 3 players, encounter exp 1200', () => {
+  context('with level 3 players, encounter exp 1200', () => {
     it('should be challenging', () => {
       const result = calculate({
         partyLevel: 3,
@@ -28,7 +31,7 @@ xdescribe('Difficulty Calculator', () => {
     })
   })
 
-  context('with 4 level 3 players, encounter exp  1600', () => {
+  context('with level 3 players, encounter exp 1600', () => {
     it('should be hard', () => {
       const result = calculate({
         partyLevel: 3,
@@ -38,7 +41,7 @@ xdescribe('Difficulty Calculator', () => {
     })
   })
 
-  context('with 4 level 3 players, encounter exp 2400', () => {
+  context('with level 3 players, encounter exp 2400', () => {
     it('should be epic', () => {
       const result = calculate({
         partyLevel: 3,
@@ -50,28 +53,40 @@ xdescribe('Difficulty Calculator', () => {
 
   describe('when the xp is less than 400', () => {
     it('should be trivial', () => {
-      const result = calculate(50)
+      const result = calculate({
+        partyLevel: 3,
+        encounterExp: 50
+      })
       expect(result).to.equal('TRIVIAL')
     })
   })
 
-  describe('when the xp is more than 3 levels higher than the APL', () => {
+  describe('when the CR is more than 3 levels higher than the APL', () => {
     it('should be death', () => {
-      const result = calculate(50)
+      const result = calculate({
+        partyLevel: 3,
+        encounterExp: 10000
+      })
       expect(result).to.equal('DEATH')
     })
   })
 
-  describe('when the xp is more than 1 levels below the APL', () => {
+  describe('when the xp is more than 1 level below the APL', () => {
     it('should be trivial', () => {
-      const result = calculate(50)
+      const result = calculate({
+        partyLevel: 2,
+        encounterExp: 10
+      })
       expect(result).to.equal('TRIVIAL')
     })
   })
 
   describe('when the xp is greater than 819200', () => {
-    it('should be trivial', () => {
-      const result = calculate(50)
+    it('should be death', () => {
+      const result = calculate({
+        partyLevel: 20,
+        encounterExp: 819500
+      })
       expect(result).to.equal('DEATH')
     })
   })

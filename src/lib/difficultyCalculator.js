@@ -1,34 +1,25 @@
+import calculateChallengeRating from '@/lib/challengeRatingCalculator'
+
 const calculate = ({ partyLevel, encounterExp }) => {
-  // averagePartyLevel = partyLevel
-  return 'EASY'
+  const challengeRating = calculateChallengeRating(encounterExp)
+  if (challengeRating === -1) return 'TRIVIAL'
+
+  const averagePartyLevel = partyLevel
+
+  const modifier = challengeRating - averagePartyLevel
+  console.log(challengeRating, partyLevel, encounterExp)
+  if (modifier > 3) return 'DEATH'
+  if (modifier < -1) return 'TRIVIAL'
+
+  return modifiers[modifier.toString()]
 }
 
-// const lookup = {
-//   '1': 400,
-//   '2': 600,
-//   '3': 800,
-//   '4': 1200,
-//   '5': 1600,
-//   '6': 2400,
-//   '7': 3200,
-//   '8': 4800,
-//   '9': 6400,
-//   '10': 9600,
-//   '11': 12800,
-//   '12': 19200,
-//   '13': 25600,
-//   '14': 38400,
-//   '15': 51200,
-//   '16': 76800,
-//   '17': 102400,
-//   '18': 153600,
-//   '19': 204800,
-//   '20': 307200,
-//   '21': 409600,
-//   '22': 614400,
-//   '23': 819200,
-//   '24': 1228800,
-//   '25': 1638400
-// }
+const modifiers = {
+  '-1': 'EASY',
+  '0': 'AVERAGE',
+  '1': 'CHALLENGING',
+  '2': 'HARD',
+  '3': 'EPIC'
+}
 
 export default calculate
