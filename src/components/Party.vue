@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <div>
-      <p>
-        Party Level
-        <input v-model="level"/>
-      </p>
-    </div>
+  <div id='party'>
+    <p>
+      Party Level
+      <input v-model="level"/>
+    </p>
   </div>
 </template>
 
@@ -27,3 +25,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#party {
+  text-align: center;
+}
+</style>

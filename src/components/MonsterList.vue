@@ -1,14 +1,20 @@
 <template>
-  <div class='bordered'>
+  <div id='monster-list'>
     <h1>Select Monsters</h1>
-    <ul>
-      <li :key="monster.id" v-for="monster in monsters">
-        {{ monster.name }}
-        {{ monster.cr }}
-        {{ monster.exp }}
+    <table align='center' class='monster-list'>
+      <thead>
+        <th>Name</th>
+        <th>Exp</th>
+        <th>&nbsp;</th>
+      </thead>
+      <tbody>
+      <tr :key="monster.id" v-for="monster in monsters">
+        <td>{{ monster.name }}</td>
+        <td>{{ monster.exp }}</td>
         <button @click="add(monster)">add</button>
-      </li>
-    </ul>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -26,3 +32,15 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#monster-list {
+  padding-right: 40px;
+}
+
+@media only screen and (max-width: 900px) {
+  #monster-list {
+    padding-right: 0px;
+  }
+}
+</style>

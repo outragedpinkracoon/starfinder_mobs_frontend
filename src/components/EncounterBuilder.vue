@@ -1,10 +1,12 @@
 <template>
-  <div class='bordered'>
+  <div id='encounter-builder'>
     <h1>Encounter Builder</h1>
     <Party></Party>
-    <div id='encounter-builder'>
-      <CurrentEncounter></CurrentEncounter>
-      <MonsterList></MonsterList>
+    <div class='flex-wrapper'>
+      <div class='flex-container'>
+        <MonsterList class='flex-item'></MonsterList>
+        <CurrentEncounter class='flex-item'></CurrentEncounter>
+      </div>
     </div>
   </div>
 </template>
@@ -24,9 +26,28 @@ export default {
 }
 </script>
 
+<style scoped>
+.flex-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 900px) {
+  .flex-container {
+    flex-direction: column-reverse;
+  }
+}
+</style>
+
 <style>
-.bordered {
-  border: 1px solid red;
+
+th, td {
+  text-align: left;
+  padding-bottom: 10px;
 }
 
 h1 {

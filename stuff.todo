@@ -1,2 +1,5 @@
 
 	☐ Add a central place to keep the challenge levels and names
+  ☐ Filter out monsters with a CR higher than the party level
+	☐ Hide 'name' and 'exp' when there is nothing selected
+	☐ Use MapState to clean things up
