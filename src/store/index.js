@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import calculateDifficulty from '@/lib/difficultyCalculator'
 
 Vue.use(Vuex)
 
@@ -20,7 +21,7 @@ const currentEncounter = {
       state.totalExp -= monster.exp
     },
     setDifficulty(state, partyLevel) {
-      state.difficulty = calculateDifficulty(partyLevel)
+      state.difficulty = calculateDifficulty({partyLevel: partyLevel, encounterExp: state.totalExp})
     }
   },
   actions: {
@@ -28,31 +29,6 @@ const currentEncounter = {
       commit('setDifficulty', rootState.party.level)
     }
   }
-}
-
-const calculateDifficulty = (partyLevel) => {
-  let result = { id: -1, name: 'EASY' }
-  switch (parseInt(partyLevel)) {
-    case -1:
-      result = { id: -1, name: 'EASY' }
-      break
-    case 0:
-      result = { id: 0, name: 'AVERAGE' }
-      break
-    case 1:
-      result = { id: 1, name: 'CHALLENGING' }
-      break
-    case 2:
-      result = { id: 2, name: 'HARD' }
-      break
-    case 3:
-      result = { id: 3, name: 'EPIC' }
-      break
-    default:
-      result = { id: -1, name: 'EASY' }
-  }
-  console.log(partyLevel)
-  return result
 }
 
 const monsterCollection = {

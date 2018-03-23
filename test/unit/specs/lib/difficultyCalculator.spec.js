@@ -7,7 +7,7 @@ describe('Difficulty Calculator', () => {
         partyLevel: 3,
         encounterExp: 600
       })
-      expect(result).to.equal('EASY')
+      expect(result).to.deep.equal({ 'id': 1, name: 'EASY' })
     })
   })
 
@@ -17,7 +17,7 @@ describe('Difficulty Calculator', () => {
         partyLevel: 3,
         encounterExp: 800
       })
-      expect(result).to.equal('AVERAGE')
+      expect(result).to.deep.equal({ 'id': 2, name: 'AVERAGE' })
     })
   })
 
@@ -27,7 +27,7 @@ describe('Difficulty Calculator', () => {
         partyLevel: 3,
         encounterExp: 1200
       })
-      expect(result).to.equal('CHALLENGING')
+      expect(result).to.deep.equal({ 'id': 3, name: 'CHALLENGING' })
     })
   })
 
@@ -37,7 +37,7 @@ describe('Difficulty Calculator', () => {
         partyLevel: 3,
         encounterExp: 1600
       })
-      expect(result).to.equal('HARD')
+      expect(result).to.deep.equal({ 'id': 4, name: 'HARD' })
     })
   })
 
@@ -47,7 +47,7 @@ describe('Difficulty Calculator', () => {
         partyLevel: 3,
         encounterExp: 2400
       })
-      expect(result).to.equal('EPIC')
+      expect(result).to.deep.equal({ 'id': 5, name: 'EPIC' })
     })
   })
 
@@ -57,7 +57,7 @@ describe('Difficulty Calculator', () => {
         partyLevel: 3,
         encounterExp: 50
       })
-      expect(result).to.equal('TRIVIAL')
+      expect(result).to.deep.equal({ 'id': 0, name: 'TRIVIAL' })
     })
   })
 
@@ -67,7 +67,7 @@ describe('Difficulty Calculator', () => {
         partyLevel: 3,
         encounterExp: 10000
       })
-      expect(result).to.equal('DEATH')
+      expect(result).to.deep.equal({ 'id': 99, name: 'DEATH' })
     })
   })
 
@@ -77,7 +77,7 @@ describe('Difficulty Calculator', () => {
         partyLevel: 2,
         encounterExp: 10
       })
-      expect(result).to.equal('TRIVIAL')
+      expect(result).to.deep.equal({ 'id': 0, name: 'TRIVIAL' })
     })
   })
 
@@ -87,7 +87,7 @@ describe('Difficulty Calculator', () => {
         partyLevel: 20,
         encounterExp: 819500
       })
-      expect(result).to.equal('DEATH')
+      expect(result).to.deep.equal({ 'id': 99, name: 'DEATH' })
     })
   })
 })
