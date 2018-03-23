@@ -44,7 +44,6 @@ export default {
 </style>
 
 <style>
-
 th, td {
   text-align: left;
   padding-bottom: 10px;

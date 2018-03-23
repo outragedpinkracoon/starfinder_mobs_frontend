@@ -12,6 +12,7 @@
       </tr>
     </table>
 
+    <template v-if="haveMonsters">
     <table class='monster-list flex-item'>
       <thead>
         <th>Name</th>
@@ -26,6 +27,7 @@
       </tr>
       </tbody>
     </table>
+    </template>
   </div>
 </template>
 
@@ -38,7 +40,7 @@ export default {
     monsters: () => store.state.currentEncounter.monsters,
     totalExp: () => store.state.currentEncounter.totalExp,
     difficulty: () => store.state.currentEncounter.difficulty.name,
-    haveMonters: () => monsters.length > 0
+    haveMonsters: () => store.state.currentEncounter.monsters.length > 0
   },
   methods: {
     remove(monster) {
