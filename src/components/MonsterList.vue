@@ -4,6 +4,7 @@
     <ul>
       <li :key="monster.id" v-for="monster in monsters">
         {{ monster.name }}
+        {{ monster.cr }}
         {{ monster.exp }}
         <button @click="add(monster)">add</button>
       </li>

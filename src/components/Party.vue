@@ -4,7 +4,6 @@
       <p>
         Party Level
         <input v-model="level"/>
-        ({{ level }})
       </p>
     </div>
   </div>
