@@ -58,6 +58,11 @@ table, tr, td {
 th {
   border-bottom: 1px solid black;
   font-weight: bold;
+  color: RGB(127, 143, 164)
+}
+
+p {
+  color: RGB(127, 143, 164)
 }
 
 h1 {
@@ -71,6 +76,7 @@ h2 {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Permanent Marker', cursive;
+  color: RGB(24, 24, 65)
 }
 
 body {

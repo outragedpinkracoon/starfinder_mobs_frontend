@@ -3,11 +3,11 @@
     <h2>Current Encounter</h2>
     <table id='stats' class='flex-item'>
       <tr>
-        <td>Total Exp:</td>
+        <td class='help'>Total Exp:</td>
         <td>{{ totalExp }}</td>
       </tr>
       <tr>
-        <td>Difficulty:</td>
+        <td class='help'>Difficulty:</td>
         <td>{{ difficulty }}</td>
       </tr>
     </table>
@@ -71,5 +71,9 @@ export default {
   li {
     padding-bottom: 10px;
   }
+}
+
+.help {
+  color: RGB(127, 143, 164)
 }
 </style>
