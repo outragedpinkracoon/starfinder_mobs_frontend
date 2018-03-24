@@ -44,13 +44,37 @@ export default {
 </style>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker');
+
 th, td {
   text-align: left;
   padding-bottom: 10px;
 }
 
+table, tr, td {
+  border-spacing: 0;
+}
+
+th {
+  border-bottom: 1px solid black;
+  font-weight: bold;
+}
+
 h1 {
-  text-align: center
+  text-align: center;
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 
 ul {
@@ -58,4 +82,5 @@ ul {
   padding: 0px;
   margin: 0px;
 }
+
 </style>

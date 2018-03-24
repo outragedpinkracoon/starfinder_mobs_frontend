@@ -1,6 +1,6 @@
 <template>
   <div class='flex-container'>
-    <h1>Current Encounter</h1>
+    <h2>Current Encounter</h2>
     <table id='stats' class='flex-item'>
       <tr>
         <td>Total Exp:</td>

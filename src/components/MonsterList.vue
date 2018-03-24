@@ -1,6 +1,6 @@
 <template>
   <div id='monster-list'>
-    <h1>Select Monsters</h1>
+    <h2>Select Monsters</h2>
     <table align='center' class='monster-list'>
       <thead>
         <th>Name</th>
