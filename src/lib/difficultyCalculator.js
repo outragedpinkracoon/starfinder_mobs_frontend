@@ -7,7 +7,6 @@ const calculate = ({ partyLevel, encounterExp }) => {
   const averagePartyLevel = partyLevel
 
   const modifier = challengeRating - averagePartyLevel
-  console.log(challengeRating, partyLevel, encounterExp)
   if (modifier > 3) return { 'id': 99, name: 'DEATH' }
   if (modifier < -1) return { 'id': 0, name: 'TRIVIAL' }
 
