@@ -8,7 +8,7 @@
       </tr>
       <tr>
         <td>{{ totalExp }}</td>
-        <td>{{ difficulty }}</td>
+        <td id='difficulty'><span v-bind:class="difficulty.toLowerCase()">{{ difficulty }}</span></td>
       </tr>
     </table>
 
@@ -98,5 +98,36 @@ $dark_blue: RGB(40,44,52);
   li {
     padding-bottom: 10px;
   }
+}
+
+#difficulty {
+  font-size: 1.2rem;
+}
+.trivial {
+  color: grey;
+}
+
+.easy {
+  color: blueviolet;
+}
+
+.average {
+  color: green;
+}
+
+.challenging {
+  color: yellow;
+}
+
+.hard {
+  color: orange;
+}
+
+.epic {
+  color: red;
+}
+
+.death {
+  color: black;
 }
 </style>

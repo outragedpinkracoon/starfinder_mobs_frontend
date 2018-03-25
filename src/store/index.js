@@ -10,7 +10,7 @@ const currentEncounter = {
   state: {
     monsters: [],
     totalExp: 0,
-    difficulty: { id: 0, name: 'EASY' }
+    difficulty: { id: -1, name: 'TRIVIAL' }
   },
   mutations: {
     addMonster(state, monster) {
