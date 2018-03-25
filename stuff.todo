@@ -1,9 +1,11 @@
 
-	☐ Add a central place to keep the challenge levels and names
+	✔ Add a central place to keep the challenge levels and names @done (2018-3-25 20:30:50)
   ☐ Filter out monsters with a CR higher than the party level
 	✔ Hide 'name' and 'exp' when there is nothing selected @done (2018-3-23 22:40:11)
 	☐ Use MapState to clean things up
 	☐ Add a search to the monster list
-  ☐ Add monster 'card' information to current encounter and monster list
 	☐ Consolidate CSS colours somehow
 	☐ Comonentise CSS - too much shared stuff. Pull out tables into their own Vue.
+
+  Big stuff
+	☐ Add 'manage encounter' to bring up health etc for monster
