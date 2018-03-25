@@ -44,12 +44,13 @@ export default {
 </style>
 
 <style lang='scss'>
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web|Permanent+Marker');
 
 $dark_blue: RGB(40,44,52);
 $light_blue: RGB(193,207,208);
 $cream: RGB(245,240,234);
 $brown: RGB(71,62,54);
+$purple: RGB(63,51,78);
 
 $table_padding: 12px;
 
@@ -105,12 +106,12 @@ h2 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Permanent Marker', cursive;
-  color: RGB(24, 24, 65)
+  color: RGB(24, 24, 65);
+  text-transform: uppercase;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   background-color: $cream;
 }
 

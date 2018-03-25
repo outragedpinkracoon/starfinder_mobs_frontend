@@ -22,7 +22,7 @@
       <tbody>
       <tr :key="index" v-for="(monster, index) in monsters">
         <td>{{ monster.name }}</td>
-        <td>{{ monster.exp }}</td>
+        <td>{{ monster.exp.toLocaleString() }}</td>
         <td><button @click="remove(index)">-</button></td>
       </tr>
       </tbody>

@@ -10,7 +10,7 @@
       <tbody>
       <tr :key="monster.id" v-for="monster in monsters">
         <td>{{ monster.name }}</td>
-        <td>{{ monster.exp }}</td>
+        <td>{{ monster.exp.toLocaleString() }}</td>
         <td><button @click="add(monster)">+</button></td>
       </tr>
       </tbody>
