@@ -6,6 +6,7 @@
 	✔ Add a search to the monster list @done (2018-3-25 21:57:41)
 	☐ Consolidate CSS colours somehow
 	☐ Comonentise CSS - too much shared stuff. Pull out tables into their own Vue.
+	☐ Stop the tables resizing on mobile when the results update
 
   Big stuff
 	☐ Add 'manage encounter' to bring up health etc for monster
