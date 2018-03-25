@@ -20,7 +20,7 @@
         <th>&nbsp;</th>
       </thead>
       <tbody>
-      <tr :key="monster.id" v-for="(monster, index) in monsters">
+      <tr :key="index" v-for="(monster, index) in monsters">
         <td>{{ monster.name }}</td>
         <td>{{ monster.exp }}</td>
         <button @click="remove(index)">[x]</button>
