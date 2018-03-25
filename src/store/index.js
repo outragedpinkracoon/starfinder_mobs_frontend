@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import calculateDifficulty from '@/lib/difficultyCalculator'
+import filter from '@/lib/filterMonsters'
 import monsters from '@/data/monsters'
 
 Vue.use(Vuex)
@@ -34,7 +35,15 @@ const currentEncounter = {
 
 const monsterCollection = {
   state: {
-    monsters: monsters
+    monsters: monsters,
+    allMonsters: monsters,
+    filter: ''
+  },
+  mutations: {
+    updateFilter(state, value) {
+      state.filter = value
+      state.monsters = filter(state.allMonsters, value)
+    }
   }
 }
 

@@ -6,6 +6,6 @@ describe('EncounterBuilder.vue', () => {
     const Constructor = Vue.extend(EncounterBuilder)
     const vm = new Constructor().$mount()
     expect(vm.$el.querySelector('h1').textContent)
-      .to.equal('Encounter Builder')
+      .to.equal('Starfinder Encounter Builder')
   })
 })
