@@ -1,10 +1,9 @@
 <template>
   <div id='monster-list'>
     <h2>Select Monsters</h2>
-    <div class='flex-container'>
-      <p>Filter:
+    <div>
+      <p id='filter'>Filter:</p>
       <input v-model="filter"/>
-      </p>
     </div>
     <table align='center' class='monster-list'>
       <thead>
@@ -64,15 +63,16 @@ $dark_blue: RGB(40,44,52);
 
 p {
   text-transform: uppercase;
+  margin: 5px;
 }
 
 input {
   padding: 10px;
-  margin-left: 5px;
+  margin: 5px 0px 10px 0px;
   border-radius: 0.5em;
   border: 1.5px solid $dark_blue;
   font-size: 1rem;
-  width: 78%;
+  width: 94%;
   background-color: RGB(255,250,244);
 }
 </style>

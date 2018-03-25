@@ -80,6 +80,12 @@ $table_padding: 12px;
   }
 }
 
+@media only screen and (min-width: 901px) {
+  table {
+    min-width: 380px;
+  }
+}
+
 th, td {
   text-align: left;
   padding-bottom: 10px;
@@ -156,5 +162,4 @@ button {
   font-size: 1rem;
   background-color: RGB(255,250,244);
 }
-
 </style>
