@@ -2,6 +2,8 @@
 
 Mob generator for Starfinder.
 
+![Screenshot  ](demo_pic.jpg)
+
 ## Dependencies
 Node 9.9.0
 Npm 5.7.0
