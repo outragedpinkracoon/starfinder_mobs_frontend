@@ -1,9 +1,10 @@
 <template>
   <div id='party'>
-    <p>
-      Party Level
+    <div class='flex-container'>
+      <p>Party Level
       <input v-model="level"/>
-    </p>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -26,8 +27,28 @@ export default {
 }
 </script>
 
-<style scoped>
-#party {
+<style lang='scss' scoped>
+
+$dark_blue: RGB(40,44,52);
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+p {
+  text-transform: uppercase;
+}
+
+input {
+  padding: 10px;
+  margin-left: 5px;
   text-align: center;
+  border-radius: 0.5em;
+  border: 1.5px solid $dark_blue;
+  font-size: 1rem;
+  width: 25px;
+  background-color: RGB(255,250,244);
 }
 </style>

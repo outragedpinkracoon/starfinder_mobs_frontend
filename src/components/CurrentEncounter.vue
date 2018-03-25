@@ -3,11 +3,11 @@
     <h2>Current Encounter</h2>
     <table id='stats' class='flex-item'>
       <tr>
-        <td class='help'>Total Exp:</td>
-        <td>{{ totalExp }}</td>
+        <th>Total Exp</th>
+        <th>Difficulty</th>
       </tr>
       <tr>
-        <td class='help'>Difficulty:</td>
+        <td>{{ totalExp }}</td>
         <td>{{ difficulty }}</td>
       </tr>
     </table>
@@ -23,7 +23,7 @@
       <tr :key="index" v-for="(monster, index) in monsters">
         <td>{{ monster.name }}</td>
         <td>{{ monster.exp }}</td>
-        <button @click="remove(index)">[x]</button>
+        <td><button @click="remove(index)">-</button></td>
       </tr>
       </tbody>
     </table>
@@ -52,28 +52,51 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+
+$cream: RGB(245,240,234);
+$light_blue: RGB(193,207,208);
+$dark_blue: RGB(40,44,52);
+
 .flex-container {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-left: 40px;
+  padding: 0px 40px 0px 40px;
 }
 
 @media only screen and (max-width: 900px) {
   .flex-container {
-    padding-left: 0px;
+    padding: 0px;
   }
 }
 
 #stats {
-  padding-bottom: 10px;
+  padding-bottom: 46px;
+
+  th {
+    background-color: $cream;
+    color: $dark_blue;
+    text-align: center;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  th:first-child, td:first-child {
+    text-align: left;
+  }
+
+  td:first-child {
+    border-right: 1px solid $dark_blue;
+  }
+
+  tr {
+    background-color: $light_blue;
+  }
 
   li {
     padding-bottom: 10px;
   }
-}
-
-.help {
-  color: RGB(127, 143, 164)
 }
 </style>

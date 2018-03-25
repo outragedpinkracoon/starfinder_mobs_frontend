@@ -4,4 +4,6 @@
 	✔ Hide 'name' and 'exp' when there is nothing selected @done (2018-3-23 22:40:11)
 	☐ Use MapState to clean things up
 	☐ Add a search to the monster list
-	☐ Add monster 'card' information to current encounter and monster list
+  ☐ Add monster 'card' information to current encounter and monster list
+	☐ Consolidate CSS colours somehow
+	☐ Comonentise CSS - too much shared stuff. Pull out tables into their own Vue.

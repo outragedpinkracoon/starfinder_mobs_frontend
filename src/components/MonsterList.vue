@@ -11,7 +11,7 @@
       <tr :key="monster.id" v-for="monster in monsters">
         <td>{{ monster.name }}</td>
         <td>{{ monster.exp }}</td>
-        <button @click="add(monster)">add</button>
+        <td><button @click="add(monster)">+</button></td>
       </tr>
       </tbody>
     </table>
@@ -33,14 +33,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
+$cream: RGB(245,240,234);
+
 #monster-list {
-  padding-right: 40px;
+  padding: 0px 40px 0px 40px;
 }
 
 @media only screen and (max-width: 900px) {
   #monster-list {
-    padding-right: 0px;
+    padding: 0px;
   }
 }
 </style>
