@@ -35,6 +35,7 @@ $dark_blue: RGB(40,44,52);
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 30px;
 }
 
 p {

@@ -1,6 +1,8 @@
 <template>
   <div id='encounter-builder'>
-    <h1>Encounter Builder</h1>
+    <div id='title'>
+      <h1>Starfinder Encounter Builder</h1>
+    </div>
     <Party></Party>
     <div class='flex-wrapper'>
       <div class='flex-container'>
@@ -53,6 +55,30 @@ $brown: RGB(71,62,54);
 $purple: RGB(63,51,78);
 
 $table_padding: 12px;
+
+#title h1 {
+  color: RGB(244,229,186);
+  background-color: RGB(73,106,142);
+  border: 4px solid RGB(121,178,198);
+  display: inline;
+  padding: 10px 20px;
+}
+
+#title {
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media only screen and (max-width: 900px) {
+  #title h1 {
+    display: block;
+    margin: 0px;
+  }
+
+  #title {
+    margin: 0px;
+  }
+}
 
 th, td {
   text-align: left;
@@ -108,6 +134,7 @@ h2 {
 h1, h2, h3, h4, h5, h6 {
   color: RGB(24, 24, 65);
   text-transform: uppercase;
+  margin: 20px 0px;
 }
 
 body {
