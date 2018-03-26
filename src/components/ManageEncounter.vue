@@ -1,0 +1,89 @@
+<template>
+  <div>
+    <div class='flex-container'>
+      <h2>Manage Encounter</h2>
+      <template v-if="haveMonsters">
+      <table class='flex-item'>
+        <thead>
+          <th>Name</th>
+          <th>Exp</th>
+          <th>Health</th>
+        </thead>
+        <tbody>
+        <tr :key="index" v-for="(monster, index) in monsters">
+          <td>{{ monster.name }}</td>
+          <td>{{ monster.exp.toLocaleString() }}</td>
+          <td>
+            <button @click="addHealth(monster)">+</button>
+            {{ monster.health }}
+            <button @click="removeHealth(monster)">-</button>
+            <span class='dead' v-if='monsterDead(monster)'>DEAD &#9760;</span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      </template>
+    </div>
+    <router-link :to="'/'">back</router-link>
+  </div>
+</template>
+
+<script>
+import store from '../store'
+
+export default {
+  name: 'ManageEncounter',
+  computed: {
+    monsters: () => store.state.manageEncounter.monsters,
+    haveMonsters: () => store.state.manageEncounter.monsters.length > 0
+  },
+  created: function () {
+    store.dispatch('syncMonsters')
+  },
+  methods: {
+    addHealth(monster) {
+      monster.health++
+    },
+    removeHealth(monster) {
+      monster.health--
+    },
+    monsterDead(monster) {
+      return monster.health <= 0
+    }
+  }
+}
+</script>
+
+<style lang='scss' scoped>
+
+$cream: RGB(245,240,234);
+$light_blue: RGB(193,207,208);
+$dark_blue: RGB(40,44,52);
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px 40px 0px 40px;
+}
+
+@media only screen and (max-width: 900px) {
+  .flex-container {
+    padding: 0px;
+  }
+}
+
+button:first-child {
+  margin-right: 10px;
+}
+
+button:nth-child(2) {
+  margin-left: 10px;
+}
+
+.dead {
+  margin-left: 10px;
+  color: darkred;
+
+}
+</style>

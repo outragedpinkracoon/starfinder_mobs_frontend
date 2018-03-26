@@ -107,7 +107,7 @@ td {
   border-right: 1px solid black;
 }
 
-td:last-child {
+td:last-child, th:last-child {
   border: none;
   text-align: center;
 }

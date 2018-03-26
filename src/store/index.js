@@ -33,6 +33,28 @@ const currentEncounter = {
   }
 }
 
+const manageEncounter = {
+  state: {
+    monsters: []
+  },
+  mutations: {
+    manageMonsters(state, monsters) {
+      let id = 0
+      const clonedMonsters = monsters.map(monster => {
+        const newMonster = Object.assign({id: id}, monster)
+        id++
+        return newMonster
+      })
+      state.monsters = clonedMonsters
+    }
+  },
+  actions: {
+    syncMonsters: ({commit, rootState}) => {
+      commit('manageMonsters', rootState.currentEncounter.monsters)
+    }
+  }
+}
+
 const monsterCollection = {
   state: {
     monsters: monsters,
@@ -62,6 +84,7 @@ export default new Vuex.Store({
   modules: {
     currentEncounter: currentEncounter,
     monsterCollection: monsterCollection,
-    party: party
+    party: party,
+    manageEncounter: manageEncounter
   }
 })
