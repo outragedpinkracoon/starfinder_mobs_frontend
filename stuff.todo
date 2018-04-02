@@ -2,11 +2,13 @@
 	✔ Add a central place to keep the challenge levels and names @done (2018-3-25 20:30:50)
   ☐ Filter out monsters with a CR higher than the party level
 	✔ Hide 'name' and 'exp' when there is nothing selected @done (2018-3-23 22:40:11)
-	☐ Use MapState to clean things up
+	✘ Use MapState to clean things up @cancelled (2018-4-2 18:39:58)
 	✔ Add a search to the monster list @done (2018-3-25 21:57:41)
 	☐ Consolidate CSS colours somehow
-	☐ Comonentise CSS - too much shared stuff. Pull out tables into their own Vue.
-	☐ Stop the tables resizing on mobile when the results update
+	☐ Componentise CSS - too much shared stuff. Pull out tables into their own Vue.
+  ☐ Stop the tables resizing on mobile when the results update
+  ☐ Address jumping when monster hp length varies on manage encounter
+	☐ Sort the ordering of the monsters - default to by exp then alphabetically
 
   Big stuff
-	☐ Add 'manage encounter' to bring up health etc for monster
+	✔ Add 'manage encounter' to bring up health etc for monster @done (2018-4-2 18:39:25)
