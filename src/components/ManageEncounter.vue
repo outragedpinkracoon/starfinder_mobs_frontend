@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id='manage-encounter'>
     <div class='flex-container'>
       <h2>Manage Encounter</h2>
       <template v-if="haveMonsters">
@@ -24,7 +24,9 @@
       </table>
       </template>
     </div>
-    <router-link :to="'/'">back</router-link>
+    <p class='button'>
+      <router-link :to="'/'">back</router-link>
+    </p>
   </div>
 </template>
 
@@ -60,11 +62,15 @@ $cream: RGB(245,240,234);
 $light_blue: RGB(193,207,208);
 $dark_blue: RGB(40,44,52);
 
+#manage-encounter {
+ padding: 0px 40px 0px 40px;
+}
+
 .flex-container {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 0px 40px 0px 40px;
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 900px) {

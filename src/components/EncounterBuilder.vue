@@ -86,6 +86,26 @@ $table_padding: 12px;
   }
 }
 
+.button {
+  padding: 10px 0px;
+  margin: 20px 0px;
+}
+
+.button a {
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 0.5em;
+  border: 1.5px solid $dark_blue;
+  font-size: 1rem;
+  background-color: RGB(255,250,244);
+  color: $dark_blue;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
+
 th, td {
   text-align: left;
   padding-bottom: 10px;

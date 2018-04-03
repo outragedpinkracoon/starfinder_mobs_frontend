@@ -27,7 +27,9 @@
       </tr>
       </tbody>
     </table>
-    <router-link :to="'manage-encounter'">Manage Encounter</router-link>
+    <p class='button'>
+      <router-link :to="'manage-encounter'">Manage Encounter</router-link>
+    </p>
     </template>
   </div>
 </template>
@@ -71,21 +73,6 @@ $dark_blue: RGB(40,44,52);
   }
 }
 
-#current-encounter {
-  margin-bottom: 10px;
-}
-
-a {
-  padding: 10px 15px;
-  text-align: center;
-  border-radius: 0.5em;
-  border: 1.5px solid $dark_blue;
-  font-size: 1rem;
-  background-color: RGB(255,250,244);
-  text-decoration: none;
-  color: $dark_blue;
-}
-
 #stats {
   padding-bottom: 46px;
 
@@ -119,6 +106,7 @@ a {
 #difficulty {
   font-size: 1.2rem;
 }
+
 .trivial {
   color: grey;
 }
