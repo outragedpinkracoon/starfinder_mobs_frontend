@@ -41,7 +41,7 @@ const manageEncounter = {
     manageMonsters(state, monsters) {
       let id = 0
       const clonedMonsters = monsters.map(monster => {
-        const newMonster = Object.assign({id: id}, monster)
+        const newMonster = Object.assign({id: id, hpModifier: 1}, monster)
         id++
         return newMonster
       })

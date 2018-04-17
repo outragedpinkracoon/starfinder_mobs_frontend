@@ -12,7 +12,7 @@
         <th>&nbsp;</th>
       </thead>
       <tbody>
-      <tr :key="monster.id" v-for="monster in monsters">
+      <tr :key="index" v-for="(monster, index) in monsters">
         <td>{{ monster.name }}</td>
         <td v-if='monster.exp'>{{ monster.exp.toLocaleString() }}</td>
         <td><button @click="add(monster)">+</button></td>

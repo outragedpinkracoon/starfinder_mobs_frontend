@@ -8,16 +8,20 @@
           <th>Name</th>
           <th>Exp</th>
           <th>Health</th>
+          <th>Apply Damage / Healing</th>
         </thead>
         <tbody>
         <tr :key="index" v-for="(monster, index) in monsters">
           <td>{{ monster.name }}</td>
           <td>{{ monster.exp.toLocaleString() }}</td>
           <td>
-            <button @click="addHealth(monster)">+</button>
             {{ monster.health }}
-            <button @click="removeHealth(monster)">-</button>
             <span class='dead' v-if='monsterDead(monster)'>DEAD &#9760;</span>
+          </td>
+          <td>
+            <button @click="addHealth(monster)">+</button>
+              <input class='modify-health' v-model='monster.hpModifier' />
+            <button @click="removeHealth(monster)">-</button>
           </td>
         </tr>
         </tbody>
@@ -44,10 +48,10 @@ export default {
   },
   methods: {
     addHealth(monster) {
-      monster.health++
+      monster.health += parseInt(monster.hpModifier)
     },
     removeHealth(monster) {
-      monster.health--
+      monster.health -= parseInt(monster.hpModifier)
     },
     monsterDead(monster) {
       return monster.health <= 0
@@ -79,17 +83,15 @@ $dark_blue: RGB(40,44,52);
   }
 }
 
-button:first-child {
-  margin-right: 10px;
-}
-
-button:nth-child(2) {
-  margin-left: 10px;
+input.modify-health {
+  text-align: center;
+  font-size: 0.9rem;
+  width: 60px;
+  padding: 8px;
 }
 
 .dead {
   margin-left: 10px;
   color: darkred;
-
 }
 </style>
