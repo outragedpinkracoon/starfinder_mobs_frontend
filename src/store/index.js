@@ -55,9 +55,15 @@ const manageEncounter = {
   }
 }
 
+const sortMonsters = (monsters) => {
+  return monsters.sort((m1, m2) => {
+    return m1.exp - m2.exp
+  })
+}
+
 const monsterCollection = {
   state: {
-    monsters: monsters,
+    monsters: sortMonsters(monsters),
     allMonsters: monsters,
     filter: ''
   },

@@ -1,15 +1,17 @@
 
-	☐ Sort the ordering of the monsters - default to by exp then alphabetically
-	☐ Sort button display on phone (+, - on manage)
+  ☐ Sort the ordering of the monsters - default to by exp then alphabetically
+	☐ Put stores into separate files
+	✔ Sort button display on phone (+, - on manage) @done (April 24th 2018, 13:18)
   ☐ Filter out monsters with a CR higher than the party level
 	☐ Componentise CSS - too much shared stuff. Pull out tables into their own Vue.
   ☐ Stop the tables resizing on mobile when the results update
   ☐ Address jumping when monster hp length varies on manage encounter
-	☐ Consolidate CSS colours somehow
 	✔ Add a central place to keep the challenge levels and names @done (2018-3-25 20:30:50)
 	✔ Hide 'name' and 'exp' when there is nothing selected @done (2018-3-23 22:40:11)
 	✔ Add a search to the monster list @done (2018-3-25 21:57:41)
+	✔ Add 'manage encounter' to bring up health etc for monster @done (2018-4-2 18:39:25)
+
+  ✘ Consolidate CSS colours somehow @canceled (April 24th 2018, 13:19)
 	✘ Use MapState to clean things up @cancelled (2018-4-2 18:39:58)
 
   Big stuff
-	✔ Add 'manage encounter' to bring up health etc for monster @done (2018-4-2 18:39:25)
