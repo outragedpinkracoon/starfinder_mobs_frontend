@@ -9,7 +9,8 @@
 	✔ Add a central place to keep the challenge levels and names @done (2018-3-25 20:30:50)
 	✔ Hide 'name' and 'exp' when there is nothing selected @done (2018-3-23 22:40:11)
 	✔ Add a search to the monster list @done (2018-3-25 21:57:41)
-	✔ Add 'manage encounter' to bring up health etc for monster @done (2018-4-2 18:39:25)
+  ✔ Add 'manage encounter' to bring up health etc for monster @done (2018-4-2 18:39:25)
+	☐ Update test data file with real attribute keys
 
   ✘ Consolidate CSS colours somehow @canceled (April 24th 2018, 13:19)
 	✘ Use MapState to clean things up @cancelled (2018-4-2 18:39:58)

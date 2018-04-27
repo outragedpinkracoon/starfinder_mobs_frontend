@@ -6,6 +6,8 @@ import axios from 'axios'
 
 Vue.use(Vuex)
 
+const monstersEndpoint = process.env.STARFINDER_MOBS_API_ROOT + '/api/monsters'
+
 const currentEncounter = {
   state: {
     monsters: [],
@@ -74,7 +76,7 @@ const monsterCollection = {
   actions: {
     loadMonsters ({ commit }) {
       axios
-        .get('http://localhost:5000/api/monsters')
+        .get(monstersEndpoint)
         .then(r => r.data)
         .then(result => {
           commit('setMonsters', result)
