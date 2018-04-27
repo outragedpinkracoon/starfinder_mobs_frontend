@@ -8,6 +8,9 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  created() {
+    this.$store.dispatch('loadMonsters')
+  },
   router,
   store,
   components: { App },

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import calculateDifficulty from '@/lib/difficultyCalculator'
 import filter from '@/lib/filterMonsters'
-import monsters from '@/data/monsters'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -55,22 +55,30 @@ const manageEncounter = {
   }
 }
 
-const sortMonsters = (monsters) => {
-  return monsters.sort((m1, m2) => {
-    return m1.exp - m2.exp
-  })
-}
-
 const monsterCollection = {
   state: {
-    monsters: sortMonsters(monsters),
-    allMonsters: monsters,
+    monsters: [],
+    allMonsters: [],
     filter: ''
   },
   mutations: {
     updateFilter(state, value) {
       state.filter = value
       state.monsters = filter(state.allMonsters, value)
+    },
+    setMonsters(state, value) {
+      state.monsters = value
+      state.allMonsters = value
+    }
+  },
+  actions: {
+    loadMonsters ({ commit }) {
+      axios
+        .get('http://localhost:5000/api/monsters')
+        .then(r => r.data)
+        .then(result => {
+          commit('setMonsters', result)
+        })
     }
   }
 }
